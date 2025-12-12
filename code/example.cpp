@@ -1,9 +1,7 @@
 #include <stdio.h>
-#include <stdint.h>
 #include <errno.h>
 #include <string.h>
 #include <stdbool.h>
-#include <complex.h>
 #include <assert.h>
 #include "olive.cpp"
 
@@ -44,7 +42,7 @@ bool checker_example(void){
     }
 
 
-    const char *file_path = "checker.ppm";
+    const char *file_path = "images/checker.ppm";
     Errno err = olivec_save_to_ppm_file(pixels, WIDTH, HEIGHT, file_path);
     if (err) {
         fprintf(stderr, "ERROR: could not save file %s: %s\n", file_path, strerror(errno));
@@ -75,7 +73,7 @@ bool circle_example(void){
     }   
 
 
-    const char *file_path = "circle.ppm";
+    const char *file_path = "images/circle.ppm";
     Errno err = olivec_save_to_ppm_file(pixels, WIDTH, HEIGHT, file_path);
     if (err) {
         fprintf(stderr, "ERROR: could not save file %s: %s\n", file_path, strerror(errno));
@@ -121,7 +119,7 @@ bool lines_example(void){
                  0xFFFF3030);
 
 
-    const char *file_path = "lines.ppm";
+    const char *file_path = "images/lines.ppm";
     Errno err = olivec_save_to_ppm_file(pixels, WIDTH, HEIGHT, file_path);
     if (err) {
         fprintf(stderr, "ERROR: could not save file %s: %s\n", file_path, strerror(errno));
@@ -157,7 +155,7 @@ bool triangle_example(){
         olivec_fill_triangle(pixels, WIDTH, HEIGHT, x1, y1, x2, y2, x3, y3, BLUE_COLOR);
     }
 
-    const char *file_path = "triangle.ppm";
+    const char *file_path = "images/triangle.ppm";
     Errno err = olivec_save_to_ppm_file(pixels, WIDTH, HEIGHT, file_path);
     if (err) {
         fprintf(stderr, "ERROR: could not save file %s: %s\n", file_path, strerror(errno));
